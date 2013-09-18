@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>Fade In-Out - Auto Play Slide Show</title>
+<script type="text/javascript" src="jquery-1.9.1.js"></script>
+<style>
+#show-case
+{
+  
+    box-shadow:1px 1px 5px 2px #ffffff;
+    border-raduius:1px;
+    height:400px;
+    margin:10px auto;
+    width:800px;
+ 
+}
+img
+{
+       position:absolute;
+       width:800px;
+       height:400px;
+}
+
+</style>
+</head>
+<body background="header_bg.jpg">
+
+<center><font size="14" face="monotype corsiva">Welcome to E-Mart</center>
+ <div id="show-case">
+    <img class="img" src="20130318-191056-20130315-215515-laptop-emis.jpg" align="left">
+   <img class="img" src="mobile_shopping.jpg">
+    <img class="img" src="HTCone1-All-view.jpg">
+
+    <img class="img" src="922938_620005251361946_1248353466_n.jpg">
+    </div>
+
+<script>
+$(document).ready(function()
+{
+    $('.img:gt(0)').hide();
+    setInterval(function() {
+        $(".img:first-child").fadeOut(2000).next(".img").fadeIn(2000).end().appendTo("#show-case")
+}, 2000);
+       
+});
+</script>
+</body>
+</html>
